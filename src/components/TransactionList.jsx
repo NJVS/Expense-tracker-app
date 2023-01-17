@@ -1,19 +1,22 @@
 import { useContext } from 'react';
 import { ExpenseContext } from '../context/ExpenseContext';
+import Transaction from './Transaction';
 
 const TransactionList = () => {
 
-  const transaction = useContext(ExpenseContext);
+  const { transactions } = useContext(ExpenseContext);
 
-  console.log(transaction)
+  console.log(transactions)
 
   return (
     <>
       <h3>History</h3>
       <ul className='list'>
-        <li className='minus'>
-          Cash <span>-$400</span><button className='delete-btn'>x</button>
-        </li>
+        {transactions.map(transaction => (
+          <Transaction key={transaction.id} data={transaction} />
+        ))}
+
+
       </ul>
     </>
   )

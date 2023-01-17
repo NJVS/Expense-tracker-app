@@ -4,10 +4,10 @@ import { ExpenseReducer } from './ExpenseReducer';
 // inital state 
 const initialState = {
   transactions: [
-    { id: 1, title: 'Flowers', amout: -20 },
-    { id: 2, title: 'Salary', amout: 300 },
-    { id: 3, title: 'Book', amout: -10 },
-    { id: 4, title: 'Camera', amout: 150 }
+    { id: 1, title: 'Flowers', amount: -20 },
+    { id: 2, title: 'Salary', amount: 300 },
+    { id: 3, title: 'Book', amount: -10 },
+    { id: 4, title: 'Camera', amount: 150 }
   ]
 }
 
