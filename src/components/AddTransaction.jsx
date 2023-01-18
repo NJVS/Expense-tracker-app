@@ -1,13 +1,30 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react';
+import { ExpenseContext } from '../context/ExpenseContext';
 
 const AddTransaction = () => {
   const [title, setTitle] = useState('');
   const [amount, setAmount] = useState(0);
+  const { addTransaction } = useContext(ExpenseContext);
+
+  function submitHandler(event) {
+    event.preventDefault();
+
+    addTransaction({
+      id: Date.now(),
+      title: title,
+      amount: amount
+    });
+    console.log(Date.now())
+
+    // reset inputs
+    setTitle('');
+    setAmount(0);
+  }
 
   return (
     <>
       <h3>Add new transaction</h3>
-      <form>
+      <form onSubmit={submitHandler}>
         <div className="form-control">
           <label htmlFor="inp_transactionTitle">Title</label>
           <input type="text" id="inp_transactionTitle" placeholder='Enter transaction title here...'

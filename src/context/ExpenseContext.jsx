@@ -25,10 +25,18 @@ export const ExpenseProvider = ({ children }) => {
     })
   }
 
+  function addTransaction(item) {
+    dispatch({
+      type: 'ADD_TRANSACTION',
+      payload: item
+    })
+  }
+
   return (
     <ExpenseContext.Provider value={{
       transactions: state.transactions,
-      deleteTransaction
+      deleteTransaction,
+      addTransaction
     }}>
       {children}
     </ExpenseContext.Provider>
