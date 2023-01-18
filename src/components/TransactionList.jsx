@@ -3,10 +3,7 @@ import { ExpenseContext } from '../context/ExpenseContext';
 import Transaction from './Transaction';
 
 const TransactionList = () => {
-
   const { transactions } = useContext(ExpenseContext);
-
-  console.log(transactions)
 
   return (
     <>
