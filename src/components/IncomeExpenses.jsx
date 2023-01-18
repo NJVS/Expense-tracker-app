@@ -4,8 +4,9 @@ import { toCurrency } from '../utils';
 
 const IncomeExpenses = () => {
   const { transactions } = useContext(ExpenseContext);
-  const income = transactions.filter(item => item.amount > 0).map(item => item.amount).reduce((a, b) => a + b, 0);
-  const expense = transactions.filter(item => item.amount < 0).map(item => item.amount).reduce((a, b) => a + b, 0);
+  const amounts = transactions.map(item => item.amount);
+  const income = amounts.filter(amount => amount > 0).reduce((a, b) => a + b, 0);
+  const expense = amounts.filter(amount => amount < 0).reduce((a, b) => a + b, 0);
 
   return (
     <div className='inc-exp-container'>
