@@ -12,9 +12,8 @@ const AddTransaction = () => {
     addTransaction({
       id: Date.now(),
       title: title,
-      amount: amount
+      amount: +amount
     });
-    console.log(Date.now())
 
     // reset inputs
     setTitle('');
