@@ -1,5 +1,10 @@
 export function ExpenseReducer(state, action) {
   switch (action.type) {
+    case 'FETCH_SUCCESS':
+      return {
+        isLoading: false,
+        transactions: action.payload
+      }
     case 'DELETE_TRANSACTION':
       return {
         ...state,
